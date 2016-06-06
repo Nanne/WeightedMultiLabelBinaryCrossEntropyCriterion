@@ -19,9 +19,11 @@ As with any Torch loss: by default, the losses are averaged over observations fo
 N = 100 # 100 Images
 C = 10 # 10 Classes
 
-labels = torch.Tensor(N,C):uniform() # Label is one when class is present, 0 when not.
+-- Label is one when class is present, 0 when not.
+labels = torch.Tensor(N,C):uniform() 
 
-NNK = torch.sum(labels, 1) # Occurence counts for each label, normally you'd obtain these from training set
+-- Occurence counts for each label, normally you'd obtain these from training set
+NNK = torch.sum(labels, 1) 
 
 criterion = nn.WeightedMultiLabelBinaryCrossEntropyCriterion(NNK, N)
 ```
